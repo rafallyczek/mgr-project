@@ -31,3 +31,7 @@ build/
 
 ### VS Code ###
 .vscode/
+
+bcrypt.txt
+md5.txt
+sha.txt
