@@ -29,8 +29,14 @@ public class MainController {
 
     @PostMapping("/passwords")
     public String passwords(@RequestParam("passwords_file") MultipartFile file, Model model) throws IOException {
-        List<String> passwords = passwordService.encodePasswords(file);
+        List<String> passwords = passwordService.loadPasswords(file);
         model.addAttribute("passwords",passwords);
+        List<String> md5 = passwordService.encodeWithMD5(passwords);
+        model.addAttribute("md5",md5);
+        List<String> sha = passwordService.encodeWithSHA(passwords);
+        model.addAttribute("sha",sha);
+        List<String> bcrypt = passwordService.encodeWithBcrypt(passwords);
+        model.addAttribute("bcrypt",bcrypt);
         return "passwords";
     }
 
