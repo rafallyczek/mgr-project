@@ -6,9 +6,10 @@
     <link rel="stylesheet" type="text/css" href="/styles.css"/>
 </head>
 <body>
-    <h1>Generowanie haseł</h1>
-    <form method="GET" th:action="@{/passwords}">
-        <input type="submit" value="Generuj">
+    <h1>Haszowanie haseł</h1>
+    <form method="POST" th:action="@{/passwords}" enctype="multipart/form-data">
+        <input type="file" id="passwords_file" name="passwords_file" accept=".txt">
+        <input type="submit" value="Haszuj">
     </form>
 </body>
 </html>
