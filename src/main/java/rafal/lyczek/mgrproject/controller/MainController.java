@@ -16,6 +16,7 @@ import rafal.lyczek.mgrproject.service.PasswordService;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -38,7 +39,7 @@ public class MainController {
     }
 
     @PostMapping("/passwords")
-    public String passwords(@RequestParam("passwords_file") MultipartFile file, Model model) throws IOException {
+    public String passwords(@RequestParam("passwords_file") MultipartFile file, Model model) throws IOException, NoSuchAlgorithmException {
         List<String> passwords = passwordService.loadPasswords(file);
         model.addAttribute("passwords",passwords);
         List<String> md5 = passwordService.encodeWithMD5(passwords);
