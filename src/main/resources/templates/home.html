@@ -3,13 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <title>Strona główna</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@2.1.0/build/pure-min.css" integrity="sha384-yHIFVG6ClnONEA5yB5DJXfW2/KC173DIQrYoZMEtBvGzmf0PKiGyNEqe9N6BNDBH" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="/styles.css"/>
 </head>
 <body>
-    <h1>Haszowanie haseł</h1>
-    <form method="POST" th:action="@{/passwords}" enctype="multipart/form-data">
-        <input type="file" id="passwords_file" name="passwords_file" accept=".txt">
-        <input type="submit" value="Haszuj">
-    </form>
+    <div class="container">
+        <div class="header">
+            <h1>HASZOWANIE HASEŁ</h1>
+        </div>
+        <div class="content">
+
+            <div class="form">
+                <form method="POST" th:action="@{/passwords}" enctype="multipart/form-data">
+                    <label class="pure-button">Wybierz plik
+                        <input type="file" id="passwords_file" name="passwords_file" accept=".txt">
+                    </label>
+                    <input type="submit" value="Haszuj" class="pure-button pure-button-primary">
+                </form>
+            </div>
+
+        </div>
+        <div class="footer">
+            Autor aplikacji: Rafał Łyczek
+        </div>
+    </div>
 </body>
 </html>

@@ -1,3 +1,47 @@
+body{
+    margin: 0;
+}
 p{
     font-weight: bold;
+}
+.container{
+    position: relative;
+    min-height: 100vh;
+}
+.header{
+    background: #2e51a2;
+    color: white;
+    display : flex;
+    align-items : center;
+    justify-content: center;
+}
+.content{
+    display : flex;
+    align-items : center;
+    justify-content: center;
+    padding-bottom: 2.5rem;
+}
+.footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;
+    display : flex;
+    align-items : center;
+    justify-content: center;
+    color: white;
+    background: #2e51a2;
+}
+.form{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+input[type="file"] {
+    display: none;
+}
+.pure-button{
+    border: 1px solid black;
+}
+h2{
+    text-decoration: underline;
 }
